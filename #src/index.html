@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.min.css">
+
+    <link rel="preload" href="https://unpkg.com/swiper@7.4.1/swiper-bundle.min.css" as="style"
+        onload="this.rel='stylesheet'">
+    <link rel="preload" href="css/style.min.css" as="style" onload="this.rel='stylesheet'">
 
     <title>Dart service manager</title>
 </head>
@@ -47,8 +50,7 @@
                                     <span class="stug-video__text">Watch the video</span>
                                 </div>
                             </div>
-                            <video controls preload="none" src="video/Piano.mp4">
-                            </video>
+                            <video controls preload="none" src="video/Piano.mp4"> </video>
                         </div>
                     </div>
                 </div>
