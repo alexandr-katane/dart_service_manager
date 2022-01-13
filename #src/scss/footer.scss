@@ -1,0 +1,113 @@
+.footer {
+    @include responsive-size(padding-top, 100, 50, $maxWidthContainer);
+    @include responsive-size(padding-bottom, 100, 50, $maxWidthContainer);
+    background-color: #061e37;
+
+    &__container {
+    }
+
+    &__content {
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &:not(:last-child){
+            @include responsive-size(margin-bottom, 50, 15, $maxWidthContainer);
+        }
+        @media (max-width: $md4+px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    &__logo {
+        z-index: 1!important;
+        margin-bottom: 15px;
+    }
+
+    &__information-links {
+    }
+
+    &__menu {
+    }
+
+    &__socials {
+    }
+}
+
+.links-information {
+    @media (max-width:$md4+px) {
+        display: flex;
+        flex-direction: column;    
+        margin-bottom: 10px;
+    }
+
+    &__link {
+        display: inline-flex;
+        align-items: center;
+        font-size: 15px;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.5);
+        transition:  all 0.3s ease 0s;
+        &:not(:last-child){
+            @include responsive-size(margin-right, 20, 10, $maxWidthContainer);
+        }
+        &::after {
+            content: '';
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            background-color: #ffffff;
+            @include responsive-size(margin-left, 20, 10, $maxWidthContainer);
+            border-radius: 50%;
+        }
+        @media (any-hover:hover) {
+            &:hover {
+                color: rgba(255, 255, 255, 1);
+            }
+        }
+        @media (max-width:$md4+px) {
+            margin-bottom: 10px;
+            &::after{
+                content: none;
+            }
+        }
+        &:last-child{
+            &::after{
+                content: none;
+            }
+        }
+    }
+}
+
+.socials-footer {
+
+    &__links {
+        display: flex;
+        align-items: center;
+    }
+
+    &__link {
+        display: inline-block;
+        opacity: 0.2;
+        font-size: 20px!important;
+        font-weight: 400;
+        letter-spacing: 0.03em;
+        color: #ffffff;
+        transition: all 0.3s ease 0s;
+        &:not(:last-child){
+            @include responsive-size(margin-right,20,10,$maxWidthContainer);
+        }
+        @media (max-width: $md4+px) {
+            margin-right: 20px !important;
+        }
+        @media (any-hover:hover) {
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+

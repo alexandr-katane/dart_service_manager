@@ -1,0 +1,17 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+
+    @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: #{$style};
+    }
+}
+
+@mixin responsive-size ($property, $maxSize, $minSize,$widthContainer) {
+    #{$property}: $maxSize+px;
+    @media (max-width:$widthContainer+px) {
+        #{$property}: calc(#{$minSize+px} + (#{$maxSize} - #{$minSize}) * ((100vw - 320px) / (#{$widthContainer} - 320)));
+    }
+}
